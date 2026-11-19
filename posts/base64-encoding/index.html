@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101714">
+  <meta name="description" content="How to identify an encoding from a sample string and record the decoder output in a writeup.">
+  <title>Recognizing Base64 strings | Fieldnotes</title>
+  <script src="../../assets/theme.js"></script>
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="../../index.html" aria-label="Fieldnotes home"><span class="brand-mark" aria-hidden="true"></span>fieldnotes<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#posts">Posts</a></nav>
+      <label class="theme-control">
+        <span class="sr-only">Theme</span>
+        <select name="theme">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="system">System</option>
+        </select>
+        <span class="select-chevron" aria-hidden="true"></span>
+      </label>
+    </div>
+  </header>
+  
+    <main class="shell article-page" id="main" tabindex="-1">
+      <a class="back-link" href="../../index.html#posts"><span aria-hidden="true">‹</span> Posts</a>
+      <header class="article-header">
+        <div class="article-meta"><span class="kind-chip ctf">CTF</span><time datetime="2026-11-08">08 Nov 2026</time><span>prototype</span><span>Demo CTF</span></div>
+        <h1 lang="en">Recognizing Base64 strings</h1>
+        <p lang="en">How to identify an encoding from a sample string and record the decoder output in a writeup.</p>
+        <div class="entry-tags" aria-label="Tags"><span>base64</span><span>encoding</span><span>python</span></div>
+      </header>
+      <div class="article-layout">
+        <nav class="toc" aria-label="Table of contents"><p>On this page</p><ul lang="en"><li class="h2"><a href="#sample-input">Sample input</a></li><li class="h2"><a href="#check-the-encoding">Check the encoding</a></li><li class="h2"><a href="#notes">Notes</a></li></ul></nav>
+        <article class="prose" lang="en"><h2 id="sample-input">Sample input</h2>
+<p>The sample string <code>aGVsbG8=</code> ends with a padding character. Its alphabet offers a clue you can check with a decoder.</p>
+<h2 id="check-the-encoding">Check the encoding</h2>
+<figure class="code-block"><figcaption><span>python</span><button type="button" data-copy="&quot;from base64 import b64decode\n\nprint(b64decode(\&quot;aGVsbG8=\&quot;, validate=True))\n&quot;" lang="en">Copy</button></figcaption><pre tabindex="0"><code class="syntax"><span class="kn">from</span><span class="w"> </span><span class="nn">base64</span><span class="w"> </span><span class="kn">import</span> <span class="n">b64decode</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b64decode</span><span class="p">(</span><span class="s2">&quot;aGVsbG8=&quot;</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</code></pre></figure><p>Expected output:</p>
+<figure class="code-block"><figcaption><span>text</span><button type="button" data-copy="&quot;b&#x27;hello&#x27;\n&quot;" lang="en">Copy</button></figcaption><pre tabindex="0"><code class="syntax">b&#39;hello&#39;
+</code></pre></figure><h2 id="notes">Notes</h2>
+<p>Base64 represents bytes as text. In a writeup, distinguish the original string, the decoded bytes, and how those bytes are displayed.</p>
+</article>
+      </div>
+      <p class="sr-only" role="status" id="copy-status"></p>
+    </main>
+  <footer class="shell site-footer"><span>Fieldnotes</span><span>Prototype with sample posts</span></footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101714">
+  <meta name="description" content="A security research journal with CTF writeups, hands-on labs, and research notes.">
+  <title>Fieldnotes | Research journal</title>
+  <script src="./assets/theme.js"></script>
+  <link rel="stylesheet" href="./assets/site.css">
+  <script src="./assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="./index.html" aria-label="Fieldnotes home"><span class="brand-mark" aria-hidden="true"></span>fieldnotes<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="./index.html#posts">Posts</a></nav>
+      <label class="theme-control">
+        <span class="sr-only">Theme</span>
+        <select name="theme">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="system">System</option>
+        </select>
+        <span class="select-chevron" aria-hidden="true"></span>
+      </label>
+    </div>
+  </header>
+  
+    <main id="main" tabindex="-1">
+      <section class="hero hero-runtime" aria-labelledby="home-title" data-hero-runtime>
+        
+          <div class="runtime-visual" role="img" aria-label="A simulated terminal types a playful object-oriented program.">
+              <pre class="runtime-terminal" aria-hidden="true"><code><span data-at="0" data-ms="720"><span class="terminal-prompt">guest@fieldnotes:~$ </span>lab --repl</span>
+
+<span data-at="960" data-ms="840"><span class="terminal-keyword">class</span> <span class="terminal-type">Hacker</span> <span class="terminal-keyword">extends</span> Human {</span>
+<span data-at="1800" data-ms="490">  <span class="terminal-type">solve</span>(ctf) {</span>
+<span data-at="2290" data-ms="930">    <span class="terminal-keyword">return</span> this.tryAgain(ctf);</span>
+<span data-at="3220" data-ms="120">  }</span>
+<span data-at="3340" data-ms="80">}</span>
+
+<span data-at="3640" data-ms="920"><span class="terminal-keyword">new</span> <span class="terminal-type">Hacker</span>().solve(<span class="terminal-string">"CTF"</span>);</span>
+<span data-at="4670" class="terminal-output">// givingUp is undefined</span></code></pre>
+              <canvas class="runtime-canvas" width="560" height="266" aria-hidden="true" hidden></canvas>
+          </div>
+        <div class="hero-content shell">
+          <div class="intro">
+            <h1 id="home-title">Research journal<span>.</span></h1>
+            <p>CTF writeups, hands-on labs, and notes from security research.</p>
+            
+        <article class="latest" aria-labelledby="latest-title">
+          <p class="latest-label"><span aria-hidden="true"></span> Latest post</p>
+          <h2 id="latest-title" lang="en"><a href="posts/http-header-notes/index.html">Reading an HTTP response header by header</a></h2>
+          <div class="article-meta">
+            <span class="kind-chip ctf">CTF</span><time datetime="2026-11-18">18 Nov 2026</time>
+          </div>
+        </article>
+          </div>
+          <button type="button" class="runtime-play" hidden>Pause</button>
+        </div>
+      </section>
+      <script src="./assets/hero.js" defer></script>
+      <section class="archive shell" id="posts" aria-labelledby="archive-title">
+        <span id="bai-viet" class="sr-only" aria-hidden="true"></span>
+        <div class="archive-header">
+          <div><h2 id="archive-title">Posts</h2><p id="result-count" role="status">6 posts</p></div>
+          <div class="archive-controls" role="search" aria-label="Search posts">
+            <label class="search"><span class="search-icon" aria-hidden="true"></span><span class="sr-only">Search posts</span><input type="search" name="q" placeholder="Search posts…" autocomplete="off"></label>
+            <label class="filter"><span class="sr-only">Post type</span><select name="type"><option value="">All post types</option><option value="ctf">CTF</option><option value="lab">Lab</option><option value="research">Research</option></select><span class="select-chevron" aria-hidden="true"></span></label>
+          </div>
+        </div>
+        <ul class="entries">
+        <li class="entry" data-kind="ctf" data-search="reading an http response header by header identify the headers and body of an http response and record the details that matter in a web writeup  http headers web web     context  an http response contains the request outcome  metadata  and a body  this writeup uses a simulated response to demonstrate how to document each part      sample response     http http 1 1 200 ok content type  text plain  charset utf 8 cache control  no store content length  5  hello        header   meaning in this example                    content type    the body is utf 8 text       cache control    the response instructs caches to avoid storing it       content length    the body is five bytes long        recording observations  preserve the original response in a code block  then explain each detail below it  label any shortened or simulated data alongside the example so readers can judge its limits  ">
+          <div class="entry-kind"><span class="kind-chip ctf">CTF</span></div>
+          <div class="entry-content">
+            <h3 lang="en"><a href="posts/http-header-notes/index.html">Reading an HTTP response header by header</a></h3>
+            <p lang="en">Identify the headers and body of an HTTP response and record the details that matter in a web writeup.</p>
+            <div class="entry-tags" aria-label="Tags"><span>http</span><span>headers</span><span>web</span></div>
+          </div>
+          <div class="entry-date"><time datetime="2026-11-18">18 Nov 2026</time></div>
+        </li>
+        <li class="entry" data-kind="lab" data-search="reading application logs in docker a short lab for finding the logs of one service in a local development environment  docker logging cloud     goal  identify timestamps  the service name  and messages in a local application s logs  this example assumes the compose service is named  app       view the logs     bash docker compose logs   tail 25 app      example output      text app 1    application ready on port 8080         notes  save enough log context to explain the observation  when comparing runs  record the time and application version with each excerpt  ">
+          <div class="entry-kind"><span class="kind-chip lab">Lab</span></div>
+          <div class="entry-content">
+            <h3 lang="en"><a href="posts/docker-log-notes/index.html">Reading application logs in Docker</a></h3>
+            <p lang="en">A short lab for finding the logs of one service in a local development environment.</p>
+            <div class="entry-tags" aria-label="Tags"><span>docker</span><span>logging</span></div>
+          </div>
+          <div class="entry-date"><time datetime="2026-11-15">15 Nov 2026</time></div>
+        </li>
+        <li class="entry" data-kind="research" data-search="what byte entropy can tell you notes on interpreting byte entropy and the limits of using it to describe data  entropy python data analysis forensics     research question  what does the entropy of a byte sequence reveal about its distribution  this example uses synthetic data for illustration      method     python from collections import counter from math import log2  def entropy data  bytes     float      if not data          return 0 0     probabilities    count   len data  for count in counter data  values        return  sum p   log2 p  for p in probabilities   print entropy b abab         the sample contains two values that occur equally often  so the theoretical entropy is one bit per byte      limitations  this measurement uses frequencies  two samples with the same byte distribution and different ordering can have identical entropy  a conclusion about format or provenance needs additional evidence  ">
+          <div class="entry-kind"><span class="kind-chip research">Research</span></div>
+          <div class="entry-content">
+            <h3 lang="en"><a href="posts/entropy-notes/index.html">What byte entropy can tell you</a></h3>
+            <p lang="en">Notes on interpreting byte entropy and the limits of using it to describe data.</p>
+            <div class="entry-tags" aria-label="Tags"><span>entropy</span><span>python</span><span>data-analysis</span></div>
+          </div>
+          <div class="entry-date"><time datetime="2026-11-11">11 Nov 2026</time></div>
+        </li>
+        <li class="entry" data-kind="ctf" data-search="recognizing base64 strings how to identify an encoding from a sample string and record the decoder output in a writeup  base64 encoding python misc     sample input  the sample string  agvsbg8   ends with a padding character  its alphabet offers a clue you can check with a decoder      check the encoding     python from base64 import b64decode  print b64decode  agvsbg8    validate true        expected output      text b hello          notes  base64 represents bytes as text  in a writeup  distinguish the original string  the decoded bytes  and how those bytes are displayed  ">
+          <div class="entry-kind"><span class="kind-chip ctf">CTF</span></div>
+          <div class="entry-content">
+            <h3 lang="en"><a href="posts/base64-encoding/index.html">Recognizing Base64 strings</a></h3>
+            <p lang="en">How to identify an encoding from a sample string and record the decoder output in a writeup.</p>
+            <div class="entry-tags" aria-label="Tags"><span>base64</span><span>encoding</span><span>python</span></div>
+          </div>
+          <div class="entry-date"><time datetime="2026-11-08">08 Nov 2026</time></div>
+        </li>
+        <li class="entry" data-kind="lab" data-search="reading linux file permissions read the permissions granted to the owner  group  and other users of a sample file  linux permissions misc     goal  read the permission groups on a sample file and relate them to their octal representation      example     bash stat  c   a  a  n  notes txt      an example result is   rw r  r   644 notes txt   the owner can read and write the file  the group and other users can read it      verify the result  compare each group of three characters with the read  write  and execute values  the output depends on the permissions of the file you inspect  ">
+          <div class="entry-kind"><span class="kind-chip lab">Lab</span></div>
+          <div class="entry-content">
+            <h3 lang="en"><a href="posts/linux-permissions/index.html">Reading Linux file permissions</a></h3>
+            <p lang="en">Read the permissions granted to the owner, group, and other users of a sample file.</p>
+            <div class="entry-tags" aria-label="Tags"><span>linux</span><span>permissions</span></div>
+          </div>
+          <div class="entry-date"><time datetime="2026-11-05">05 Nov 2026</time></div>
+        </li>
+        <li class="entry" data-kind="research" data-search="reconciling time zones in logs a convention for ordering events when log sources use different time zones  logging timestamps forensics forensics     the problem  two systems can record the same instant in different time zones  keeping the original timestamps lets readers check the conversion      example    source   timestamp   utc                         workstation    2026 11 02t14 00 00 07 00     2026 11 02t07 00 00z      service    2026 11 02t07 00 00z     2026 11 02t07 00 00z        limitations  time zone conversion makes the timestamps comparable  when analyzing real logs  check clock skew and the precision of each source as well  ">
+          <div class="entry-kind"><span class="kind-chip research">Research</span></div>
+          <div class="entry-content">
+            <h3 lang="en"><a href="posts/log-timestamps/index.html">Reconciling time zones in logs</a></h3>
+            <p lang="en">A convention for ordering events when log sources use different time zones.</p>
+            <div class="entry-tags" aria-label="Tags"><span>logging</span><span>timestamps</span><span>forensics</span></div>
+          </div>
+          <div class="entry-date"><time datetime="2026-11-02">02 Nov 2026</time></div>
+        </li></ul>
+        <p class="empty" hidden>No matching posts. Try another search or choose all post types.</p>
+      </section>
+    </main>
+  <footer class="shell site-footer"><span>Fieldnotes</span><span>Prototype with sample posts</span></footer>
+</body>
+</html>

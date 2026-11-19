@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101714">
+  <meta name="description" content="Identify the headers and body of an HTTP response and record the details that matter in a web writeup.">
+  <title>Reading an HTTP response header by header | Fieldnotes</title>
+  <script src="../../assets/theme.js"></script>
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="../../index.html" aria-label="Fieldnotes home"><span class="brand-mark" aria-hidden="true"></span>fieldnotes<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#posts">Posts</a></nav>
+      <label class="theme-control">
+        <span class="sr-only">Theme</span>
+        <select name="theme">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="system">System</option>
+        </select>
+        <span class="select-chevron" aria-hidden="true"></span>
+      </label>
+    </div>
+  </header>
+  
+    <main class="shell article-page" id="main" tabindex="-1">
+      <a class="back-link" href="../../index.html#posts"><span aria-hidden="true">‹</span> Posts</a>
+      <header class="article-header">
+        <div class="article-meta"><span class="kind-chip ctf">CTF</span><time datetime="2026-11-18">18 Nov 2026</time><span>prototype</span><span>Demo CTF</span></div>
+        <h1 lang="en">Reading an HTTP response header by header</h1>
+        <p lang="en">Identify the headers and body of an HTTP response and record the details that matter in a web writeup.</p>
+        <div class="entry-tags" aria-label="Tags"><span>http</span><span>headers</span><span>web</span></div>
+      </header>
+      <div class="article-layout">
+        <nav class="toc" aria-label="Table of contents"><p>On this page</p><ul lang="en"><li class="h2"><a href="#context">Context</a></li><li class="h2"><a href="#sample-response">Sample response</a></li><li class="h2"><a href="#recording-observations">Recording observations</a></li></ul></nav>
+        <article class="prose" lang="en"><h2 id="context">Context</h2>
+<p>An HTTP response contains the request outcome, metadata, and a body. This writeup uses a simulated response to demonstrate how to document each part.</p>
+<h2 id="sample-response">Sample response</h2>
+<figure class="code-block"><figcaption><span>http</span><button type="button" data-copy="&quot;HTTP/1.1 200 OK\nContent-Type: text/plain; charset=utf-8\nCache-Control: no-store\nContent-Length: 5\n\nhello\n&quot;" lang="en">Copy</button></figcaption><pre tabindex="0"><code class="syntax"><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/plain; charset=utf-8</span>
+<span class="na">Cache-Control</span><span class="o">:</span> <span class="l">no-store</span>
+<span class="na">Content-Length</span><span class="o">:</span> <span class="l">5</span>
+
+hello
+</code></pre></figure><div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Meaning in this example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Content-Type</code></td>
+<td>The body is UTF-8 text.</td>
+</tr>
+<tr>
+<td><code>Cache-Control</code></td>
+<td>The response instructs caches to avoid storing it.</td>
+</tr>
+<tr>
+<td><code>Content-Length</code></td>
+<td>The body is five bytes long.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="recording-observations">Recording observations</h2>
+<p>Preserve the original response in a code block, then explain each detail below it. Label any shortened or simulated data alongside the example so readers can judge its limits.</p>
+</article>
+      </div>
+      <p class="sr-only" role="status" id="copy-status"></p>
+    </main>
+  <footer class="shell site-footer"><span>Fieldnotes</span><span>Prototype with sample posts</span></footer>
+</body>
+</html>

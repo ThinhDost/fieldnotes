@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101714">
+  <meta name="description" content="Read the permissions granted to the owner, group, and other users of a sample file.">
+  <title>Reading Linux file permissions | Fieldnotes</title>
+  <script src="../../assets/theme.js"></script>
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="../../index.html" aria-label="Fieldnotes home"><span class="brand-mark" aria-hidden="true"></span>fieldnotes<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#posts">Posts</a></nav>
+      <label class="theme-control">
+        <span class="sr-only">Theme</span>
+        <select name="theme">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="system">System</option>
+        </select>
+        <span class="select-chevron" aria-hidden="true"></span>
+      </label>
+    </div>
+  </header>
+  
+    <main class="shell article-page" id="main" tabindex="-1">
+      <a class="back-link" href="../../index.html#posts"><span aria-hidden="true">‹</span> Posts</a>
+      <header class="article-header">
+        <div class="article-meta"><span class="kind-chip lab">Lab</span><time datetime="2026-11-05">05 Nov 2026</time><span>prototype</span><span>Local Linux</span></div>
+        <h1 lang="en">Reading Linux file permissions</h1>
+        <p lang="en">Read the permissions granted to the owner, group, and other users of a sample file.</p>
+        <div class="entry-tags" aria-label="Tags"><span>linux</span><span>permissions</span></div>
+      </header>
+      <div class="article-layout">
+        <nav class="toc" aria-label="Table of contents"><p>On this page</p><ul lang="en"><li class="h2"><a href="#goal">Goal</a></li><li class="h2"><a href="#example">Example</a></li><li class="h2"><a href="#verify-the-result">Verify the result</a></li></ul></nav>
+        <article class="prose" lang="en"><h2 id="goal">Goal</h2>
+<p>Read the permission groups on a sample file and relate them to their octal representation.</p>
+<h2 id="example">Example</h2>
+<figure class="code-block"><figcaption><span>bash</span><button type="button" data-copy="&quot;stat -c &#x27;%A %a %n&#x27; notes.txt\n&quot;" lang="en">Copy</button></figcaption><pre tabindex="0"><code class="syntax">stat<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;%A %a %n&#39;</span><span class="w"> </span>notes.txt
+</code></pre></figure><p>An example result is <code>-rw-r--r-- 644 notes.txt</code>. The owner can read and write the file. The group and other users can read it.</p>
+<h2 id="verify-the-result">Verify the result</h2>
+<p>Compare each group of three characters with the read, write, and execute values. The output depends on the permissions of the file you inspect.</p>
+</article>
+      </div>
+      <p class="sr-only" role="status" id="copy-status"></p>
+    </main>
+  <footer class="shell site-footer"><span>Fieldnotes</span><span>Prototype with sample posts</span></footer>
+</body>
+</html>

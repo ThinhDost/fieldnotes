@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101714">
+  <meta name="description" content="Notes on interpreting byte entropy and the limits of using it to describe data.">
+  <title>What byte entropy can tell you | Fieldnotes</title>
+  <script src="../../assets/theme.js"></script>
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="../../index.html" aria-label="Fieldnotes home"><span class="brand-mark" aria-hidden="true"></span>fieldnotes<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#posts">Posts</a></nav>
+      <label class="theme-control">
+        <span class="sr-only">Theme</span>
+        <select name="theme">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="system">System</option>
+        </select>
+        <span class="select-chevron" aria-hidden="true"></span>
+      </label>
+    </div>
+  </header>
+  
+    <main class="shell article-page" id="main" tabindex="-1">
+      <a class="back-link" href="../../index.html#posts"><span aria-hidden="true">‹</span> Posts</a>
+      <header class="article-header">
+        <div class="article-meta"><span class="kind-chip research">Research</span><time datetime="2026-11-11">11 Nov 2026</time><span>prototype</span></div>
+        <h1 lang="en">What byte entropy can tell you</h1>
+        <p lang="en">Notes on interpreting byte entropy and the limits of using it to describe data.</p>
+        <div class="entry-tags" aria-label="Tags"><span>entropy</span><span>python</span><span>data-analysis</span></div>
+      </header>
+      <div class="article-layout">
+        <nav class="toc" aria-label="Table of contents"><p>On this page</p><ul lang="en"><li class="h2"><a href="#research-question">Research question</a></li><li class="h2"><a href="#method">Method</a></li><li class="h2"><a href="#limitations">Limitations</a></li></ul></nav>
+        <article class="prose" lang="en"><h2 id="research-question">Research question</h2>
+<p>What does the entropy of a byte sequence reveal about its distribution? This example uses synthetic data for illustration.</p>
+<h2 id="method">Method</h2>
+<figure class="code-block"><figcaption><span>python</span><button type="button" data-copy="&quot;from collections import Counter\nfrom math import log2\n\ndef entropy(data: bytes) -&gt; float:\n    if not data:\n        return 0.0\n    probabilities = (count / len(data) for count in Counter(data).values())\n    return -sum(p * log2(p) for p in probabilities)\n\nprint(entropy(b\&quot;ABAB\&quot;))\n&quot;" lang="en">Copy</button></figcaption><pre tabindex="0"><code class="syntax"><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">log2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">entropy</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+    <span class="n">probabilities</span> <span class="o">=</span> <span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">Counter</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">return</span> <span class="o">-</span><span class="nb">sum</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">probabilities</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">entropy</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;ABAB&quot;</span><span class="p">))</span>
+</code></pre></figure><p>The sample contains two values that occur equally often, so the theoretical entropy is one bit per byte.</p>
+<h2 id="limitations">Limitations</h2>
+<p>This measurement uses frequencies. Two samples with the same byte distribution and different ordering can have identical entropy. A conclusion about format or provenance needs additional evidence.</p>
+</article>
+      </div>
+      <p class="sr-only" role="status" id="copy-status"></p>
+    </main>
+  <footer class="shell site-footer"><span>Fieldnotes</span><span>Prototype with sample posts</span></footer>
+</body>
+</html>
