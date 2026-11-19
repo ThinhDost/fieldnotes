@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Writing Studio | Fieldnotes</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="./studio.css">
+  <script src="./vendor/markdown-it.min.js" defer></script>
+  <script src="./vendor/js-yaml.min.js" defer></script>
+  <script type="module" src="./studio.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="../" aria-label="Fieldnotes home"><span class="brand-mark" aria-hidden="true"></span>fieldnotes<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="../#posts">View posts</a></nav>
+      <button type="button" id="sign-out" hidden>Sign out</button>
+    </div>
+  </header>
+  <main class="shell studio" id="main" tabindex="-1">
+    <header class="studio-heading">
+      <h1>Writing Studio<span>.</span></h1>
+      <p id="studio-subtitle">Owner access for ThinhDost.</p>
+    </header>
+    <section class="login" aria-labelledby="login-title">
+      <h2 id="login-title">Sign in</h2>
+      <p>Use a fine-grained GitHub token for <code>fieldnotes-source</code> and <code>fieldnotes</code> with Contents set to Read and write.</p>
+      <form id="login" hidden>
+        <label for="access-token">GitHub access token</label>
+        <input id="access-token" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" required>
+        <button type="submit" class="primary">Open studio</button>
+      </form>
+      <p><a href="https://github.com/settings/personal-access-tokens/new?name=Fieldnotes%20Studio&amp;target_name=ThinhDost&amp;contents=write&amp;expires_in=30" target="_blank" rel="noopener noreferrer">Create a GitHub token</a></p>
+      <p class="message" id="login-status" role="status"></p>
+      <noscript>JavaScript is required to sign in.</noscript>
+    </section>
+    <section id="workspace" class="workspace" aria-label="Owner writing workspace" hidden>
+      <aside class="library">
+        <div class="library-heading">
+          <h2>Posts</h2>
+          <button id="new-post" type="button">New post</button>
+        </div>
+        <ul id="entries" aria-label="Your posts"></ul>
+      </aside>
+      <div class="compose">
+        <form id="post-form">
+          <fieldset id="fields">
+            <legend class="sr-only">Post fields</legend>
+            <label class="wide">Title <input name="title" required autocomplete="off"></label>
+            <label>Permalink slug <input name="slug" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*" spellcheck="false"></label>
+            <label><span id="post-type-label">Type</span> <select name="type" aria-labelledby="post-type-label"><option value="ctf">CTF</option><option value="lab">Lab</option><option value="research">Research</option></select></label>
+            <label>Publish date <input name="date" type="date"></label>
+            <label>Article language <input name="lang" value="en" placeholder="en or vi"></label>
+            <label class="wide">Summary <input name="summary"></label>
+            <label class="wide">Tags <textarea name="tags" rows="2" placeholder="One tag per line"></textarea></label>
+            <div class="editor wide">
+              <div class="editor-bar">
+                <label for="body">Markdown</label>
+                <label class="upload">Add images <input type="file" id="images" accept="image/png,image/jpeg,image/gif,image/webp" multiple></label>
+              </div>
+              <textarea id="body" name="body" spellcheck="false" placeholder="## Start writing"></textarea>
+            </div>
+            <section class="preview wide" aria-labelledby="preview-title">
+              <h2 id="preview-title">Preview</h2>
+              <div class="prose" id="preview"></div>
+            </section>
+            <div class="actions wide">
+              <button type="submit" value="draft">Save draft</button>
+              <button type="submit" value="publish" class="primary">Publish</button>
+            </div>
+          </fieldset>
+        </form>
+        <p class="message" id="save-status" role="status"></p>
+        <button id="finish-publish" type="button" hidden>Finish publishing</button>
+        <p id="publish-links" hidden><a id="deployment-status" href="https://github.com/ThinhDost/fieldnotes-source/actions" target="_blank" rel="noopener noreferrer">Deployment status</a> <a id="public-post" href="../" target="_blank" rel="noopener noreferrer">View public post</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
